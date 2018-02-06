@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		351DF4072029ECE1008A2831 /* InAppRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 351DF4052029ECE1008A2831 /* InAppRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		356879E82029F2D200040ECE /* InAppEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356879E72029F2D200040ECE /* InAppEndpoint.swift */; };
+		356879EA2029F2E500040ECE /* InAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356879E92029F2E500040ECE /* InAppRouter.swift */; };
+		356879EC2029F32500040ECE /* RoutableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356879EB2029F32500040ECE /* RoutableViewController.swift */; };
+		356879EE2029FA1E00040ECE /* URLComponents+Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356879ED2029FA1E00040ECE /* URLComponents+Endpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		351DF4022029ECE1008A2831 /* InAppRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InAppRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		351DF4052029ECE1008A2831 /* InAppRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InAppRouter.h; sourceTree = "<group>"; };
 		351DF4062029ECE1008A2831 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		356879E72029F2D200040ECE /* InAppEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppEndpoint.swift; sourceTree = "<group>"; };
+		356879E92029F2E500040ECE /* InAppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppRouter.swift; sourceTree = "<group>"; };
+		356879EB2029F32500040ECE /* RoutableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutableViewController.swift; sourceTree = "<group>"; };
+		356879ED2029FA1E00040ECE /* URLComponents+Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+Endpoint.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				351DF4052029ECE1008A2831 /* InAppRouter.h */,
+				356879E92029F2E500040ECE /* InAppRouter.swift */,
+				356879E72029F2D200040ECE /* InAppEndpoint.swift */,
+				356879EB2029F32500040ECE /* RoutableViewController.swift */,
+				356879ED2029FA1E00040ECE /* URLComponents+Endpoint.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -111,6 +123,7 @@
 				TargetAttributes = {
 					351DF4012029ECE1008A2831 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -147,6 +160,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356879EE2029FA1E00040ECE /* URLComponents+Endpoint.swift in Sources */,
+				356879E82029F2D200040ECE /* InAppEndpoint.swift in Sources */,
+				356879EC2029F32500040ECE /* RoutableViewController.swift in Sources */,
+				356879EA2029F2E500040ECE /* InAppRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +286,7 @@
 		351DF40B2029ECE1008A2831 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -281,6 +299,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.nhamada.InAppRouter;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -289,6 +308,7 @@
 		351DF40C2029ECE1008A2831 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
