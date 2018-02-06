@@ -13,6 +13,8 @@
 		356879D12029EE5E00040ECE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 356879D02029EE5E00040ECE /* Assets.xcassets */; };
 		356879D42029EE5E00040ECE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356879D22029EE5E00040ECE /* LaunchScreen.storyboard */; };
 		356879E22029EEA100040ECE /* InAppRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356879E32029EEA100040ECE /* InAppRouter.framework */; };
+		356879F02029FEAF00040ECE /* ExampleTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356879EF2029FEAF00040ECE /* ExampleTabViewController.swift */; };
+		356879F22029FED100040ECE /* ExampleTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356879F12029FED100040ECE /* ExampleTab.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		356879D32029EE5E00040ECE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		356879D52029EE5F00040ECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		356879E32029EEA100040ECE /* InAppRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = InAppRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		356879EF2029FEAF00040ECE /* ExampleTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTabViewController.swift; sourceTree = "<group>"; };
+		356879F12029FED100040ECE /* ExampleTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExampleTab.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			children = (
 				356879CB2029EE5E00040ECE /* ViewController.swift */,
 				356879CD2029EE5E00040ECE /* Main.storyboard */,
+				356879EF2029FEAF00040ECE /* ExampleTabViewController.swift */,
+				356879F12029FED100040ECE /* ExampleTab.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -162,6 +168,7 @@
 				356879D42029EE5E00040ECE /* LaunchScreen.storyboard in Resources */,
 				356879D12029EE5E00040ECE /* Assets.xcassets in Resources */,
 				356879CF2029EE5E00040ECE /* Main.storyboard in Resources */,
+				356879F22029FED100040ECE /* ExampleTab.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +181,7 @@
 			files = (
 				356879CC2029EE5E00040ECE /* ViewController.swift in Sources */,
 				356879CA2029EE5E00040ECE /* AppDelegate.swift in Sources */,
+				356879F02029FEAF00040ECE /* ExampleTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

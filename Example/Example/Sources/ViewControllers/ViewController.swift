@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import InAppRouter
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tabsButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +23,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func onButtonTapped(_ sender: UIButton) {
+        switch sender {
+        case tabsButton:
+            InAppRouter.default.route(to: "/tabs")
+        default:
+            break
+        }
+    }
+    
 }
 
