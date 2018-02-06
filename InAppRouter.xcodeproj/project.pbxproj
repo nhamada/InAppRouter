@@ -46,8 +46,8 @@
 		351DF4042029ECE1008A2831 /* InAppRouter */ = {
 			isa = PBXGroup;
 			children = (
-				351DF40E2029ED1D008A2831 /* Resources */,
 				351DF40D2029ED1D008A2831 /* Sources */,
+				351DF40E2029ED1D008A2831 /* Resources */,
 			);
 			path = InAppRouter;
 			sourceTree = "<group>";
