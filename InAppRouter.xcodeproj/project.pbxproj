@@ -12,6 +12,7 @@
 		356879EA2029F2E500040ECE /* InAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356879E92029F2E500040ECE /* InAppRouter.swift */; };
 		356879EC2029F32500040ECE /* RoutableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356879EB2029F32500040ECE /* RoutableViewController.swift */; };
 		356879EE2029FA1E00040ECE /* URLComponents+Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356879ED2029FA1E00040ECE /* URLComponents+Endpoint.swift */; };
+		35E655F4202B328C00ED1FA7 /* EndpointComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E655F3202B328C00ED1FA7 /* EndpointComponents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		356879E92029F2E500040ECE /* InAppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppRouter.swift; sourceTree = "<group>"; };
 		356879EB2029F32500040ECE /* RoutableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutableViewController.swift; sourceTree = "<group>"; };
 		356879ED2029FA1E00040ECE /* URLComponents+Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+Endpoint.swift"; sourceTree = "<group>"; };
+		35E655F3202B328C00ED1FA7 /* EndpointComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointComponents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				356879E72029F2D200040ECE /* InAppEndpoint.swift */,
 				356879EB2029F32500040ECE /* RoutableViewController.swift */,
 				356879ED2029FA1E00040ECE /* URLComponents+Endpoint.swift */,
+				35E655F3202B328C00ED1FA7 /* EndpointComponents.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				356879E82029F2D200040ECE /* InAppEndpoint.swift in Sources */,
 				356879EC2029F32500040ECE /* RoutableViewController.swift in Sources */,
 				356879EA2029F2E500040ECE /* InAppRouter.swift in Sources */,
+				35E655F4202B328C00ED1FA7 /* EndpointComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
