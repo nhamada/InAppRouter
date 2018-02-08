@@ -42,6 +42,23 @@ enum ParameterType {
             return true
         }
     }
+    
+    func instantiate(_ string: String) -> Any {
+        switch self {
+        case .integer:
+            guard let value = Int(string) else {
+                fatalError()
+            }
+            return value
+        case .double:
+            guard let value = Double(string) else {
+                fatalError()
+            }
+            return value
+        case .string:
+            return string
+        }
+    }
 }
 
 enum Component {
@@ -71,14 +88,17 @@ enum Component {
 }
 
 struct EndpointComponents {
+    static let separator: Character = "/"
+    static let separatorString = String(EndpointComponents.separator)
+    
     let components: [Component]
     
     init(_ string: String) {
-        if !string.hasPrefix("/") {
+        if !string.hasPrefix(EndpointComponents.separatorString) {
             components = []
             return
         }
-        let substrings = string.dropFirst().split(separator: "/")
+        let substrings = string.dropFirst().split(separator: EndpointComponents.separator)
         components = substrings.map { Component(from: $0) }
     }
 }

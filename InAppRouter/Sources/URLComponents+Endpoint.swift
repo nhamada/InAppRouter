@@ -11,14 +11,14 @@ import Foundation
 extension URLComponents {
     private var routablePath: String {
         if let host = host {
-            return "\(host)/\(path)"
+            return "\(host)\(EndpointComponents.separator)\(path)"
         } else {
             return path
         }
     }
     
     private var routablePathComponents: [String] {
-        return routablePath.split(separator: "/").map( { String($0) } )
+        return routablePath.split(separator: EndpointComponents.separator).map( { String($0) } )
     }
     
     func match(to endpoint: InAppEndpoint) -> Bool {
@@ -31,5 +31,18 @@ extension URLComponents {
             }
             return $1.1.match(to: $1.0)
         }
+    }
+    
+    func retrieveParameters(for endpoint: EndpointComponents) -> [String:Any] {
+        var result: [String:Any] = [:]
+        zip(routablePathComponents, endpoint.components).forEach {
+            switch $1 {
+            case .label:
+                break
+            case .parameter(let name, let type):
+                result[name] = type.instantiate($0)
+            }
+        }
+        return result
     }
 }
