@@ -17,8 +17,19 @@ extension URLComponents {
         }
     }
     
+    private var routablePathComponents: [String] {
+        return routablePath.split(separator: "/").map( { String($0) } )
+    }
+    
     func match(to endpoint: InAppEndpoint) -> Bool {
-        // TODO: Extend to match variable in path
-        return routablePath == endpoint.endpoint
+        guard routablePathComponents.count == endpoint.endpointComponents.components.count else {
+            return false
+        }
+        return zip(routablePathComponents, endpoint.endpointComponents.components).reduce(true) {
+            guard $0 else {
+                return false
+            }
+            return $1.1.match(to: $1.0)
+        }
     }
 }

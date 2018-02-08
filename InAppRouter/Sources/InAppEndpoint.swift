@@ -13,12 +13,13 @@ import UIKit
  */
 final class InAppEndpoint {
     /// Endpoint definition
-    internal let endpoint: String
+    internal let endpointComponents: EndpointComponents
     /// Corresponding view controller class
     private let viewControllerClass: RoutableViewController.Type
     
     init(endpoint: String, viewControllerClass: RoutableViewController.Type) {
-        self.endpoint = endpoint
+        self.endpointComponents = EndpointComponents(endpoint)
+        print(endpointComponents)
         self.viewControllerClass = viewControllerClass
     }
     
