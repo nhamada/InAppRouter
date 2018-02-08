@@ -43,6 +43,12 @@ extension URLComponents {
                 result[name] = type.instantiate($0)
             }
         }
+        queryItems?.forEach {
+            guard let value = $0.value else {
+                return
+            }
+            result[$0.name] = value
+        }
         return result
     }
 }
