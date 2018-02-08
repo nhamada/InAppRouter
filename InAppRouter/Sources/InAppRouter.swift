@@ -49,8 +49,8 @@ public final class InAppRouter {
             return false
         }
         let viewController = destination.instantiateViewController(bundle: Bundle.main)
-        // TODO: Configure view controller with `url`
-        
+        let parameters = urlComponents.retrieveParameters(for: destination.endpointComponents)
+        viewController.setValuesForKeys(parameters)
         // TODO: Control `present` or `push`
         rootViewController.present(viewController, animated: true, completion: nil)
         

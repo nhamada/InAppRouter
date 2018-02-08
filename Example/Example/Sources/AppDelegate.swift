@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         InAppRouter.default.register(endpoint: "/tabs", with: ExampleTabViewController.self)
+        InAppRouter.default.register(endpoint: "/titles/{titleId:Int}", with: ExampleTitleViewController.self)
         
         return true
     }

@@ -12,6 +12,7 @@ import InAppRouter
 class ViewController: UIViewController {
 
     @IBOutlet weak var tabsButton: UIButton!
+    @IBOutlet weak var titleId10Button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,8 @@ class ViewController: UIViewController {
         switch sender {
         case tabsButton:
             InAppRouter.default.route(to: "/tabs")
+        case titleId10Button:
+            InAppRouter.default.route(to: "/titles/10")
         default:
             break
         }

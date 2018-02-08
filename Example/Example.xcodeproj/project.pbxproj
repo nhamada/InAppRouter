@@ -15,6 +15,8 @@
 		356879E22029EEA100040ECE /* InAppRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356879E32029EEA100040ECE /* InAppRouter.framework */; };
 		356879F02029FEAF00040ECE /* ExampleTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356879EF2029FEAF00040ECE /* ExampleTabViewController.swift */; };
 		356879F22029FED100040ECE /* ExampleTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356879F12029FED100040ECE /* ExampleTab.storyboard */; };
+		35E655F6202C642800ED1FA7 /* ExampleTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E655F5202C642800ED1FA7 /* ExampleTitleViewController.swift */; };
+		35E655F8202C643600ED1FA7 /* ExampleTitle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E655F7202C643600ED1FA7 /* ExampleTitle.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		356879E32029EEA100040ECE /* InAppRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = InAppRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		356879EF2029FEAF00040ECE /* ExampleTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTabViewController.swift; sourceTree = "<group>"; };
 		356879F12029FED100040ECE /* ExampleTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExampleTab.storyboard; sourceTree = "<group>"; };
+		35E655F5202C642800ED1FA7 /* ExampleTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTitleViewController.swift; sourceTree = "<group>"; };
+		35E655F7202C643600ED1FA7 /* ExampleTitle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExampleTitle.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				356879CD2029EE5E00040ECE /* Main.storyboard */,
 				356879EF2029FEAF00040ECE /* ExampleTabViewController.swift */,
 				356879F12029FED100040ECE /* ExampleTab.storyboard */,
+				35E655F5202C642800ED1FA7 /* ExampleTitleViewController.swift */,
+				35E655F7202C643600ED1FA7 /* ExampleTitle.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -168,6 +174,7 @@
 				356879D42029EE5E00040ECE /* LaunchScreen.storyboard in Resources */,
 				356879D12029EE5E00040ECE /* Assets.xcassets in Resources */,
 				356879CF2029EE5E00040ECE /* Main.storyboard in Resources */,
+				35E655F8202C643600ED1FA7 /* ExampleTitle.storyboard in Resources */,
 				356879F22029FED100040ECE /* ExampleTab.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35E655F6202C642800ED1FA7 /* ExampleTitleViewController.swift in Sources */,
 				356879CC2029EE5E00040ECE /* ViewController.swift in Sources */,
 				356879CA2029EE5E00040ECE /* AppDelegate.swift in Sources */,
 				356879F02029FEAF00040ECE /* ExampleTabViewController.swift in Sources */,

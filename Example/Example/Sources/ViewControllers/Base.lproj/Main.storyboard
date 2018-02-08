@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="X7Y-RJ-Lm1">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="58.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destinations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcl-z3-3cO">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
@@ -35,6 +35,19 @@
                                                 <state key="normal" title="Tabs"/>
                                                 <connections>
                                                     <action selector="onButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Efs-gd-grm"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example Title ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y86-ZF-Xrd">
+                                                <rect key="frame" x="0.0" y="66.5" width="375" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pv-ww-Tub">
+                                                <rect key="frame" x="0.0" y="95" width="375" height="30"/>
+                                                <state key="normal" title="Title ID = 10"/>
+                                                <connections>
+                                                    <action selector="onButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NF1-DM-V4l"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -61,6 +74,7 @@
                     <navigationItem key="navigationItem" id="Lrw-mC-D3A"/>
                     <connections>
                         <outlet property="tabsButton" destination="wYs-cF-hoT" id="Pyk-1V-utZ"/>
+                        <outlet property="titleId10Button" destination="3pv-ww-Tub" id="uOc-S6-12S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
