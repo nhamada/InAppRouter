@@ -13,6 +13,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tabsButton: UIButton!
     @IBOutlet weak var titleId10Button: UIButton!
+    @IBOutlet weak var queryWithoutOptionButton: UIButton!
+    @IBOutlet weak var queryWithOptionButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,10 @@ class ViewController: UIViewController {
             InAppRouter.default.route(to: "/tabs")
         case titleId10Button:
             InAppRouter.default.route(to: "/titles/10")
+        case queryWithoutOptionButton:
+            InAppRouter.default.route(to: "/query/NoOption")
+        case queryWithOptionButton:
+            InAppRouter.default.route(to: "/query/option?optionalQuery=\"Test data\"&optionalValue=42")
         default:
             break
         }

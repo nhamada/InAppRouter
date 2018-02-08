@@ -17,6 +17,8 @@
 		356879F22029FED100040ECE /* ExampleTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356879F12029FED100040ECE /* ExampleTab.storyboard */; };
 		35E655F6202C642800ED1FA7 /* ExampleTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E655F5202C642800ED1FA7 /* ExampleTitleViewController.swift */; };
 		35E655F8202C643600ED1FA7 /* ExampleTitle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E655F7202C643600ED1FA7 /* ExampleTitle.storyboard */; };
+		35E655FA202C78A000ED1FA7 /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E655F9202C78A000ED1FA7 /* QueryViewController.swift */; };
+		35E655FC202C78AF00ED1FA7 /* Query.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E655FB202C78AF00ED1FA7 /* Query.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		356879F12029FED100040ECE /* ExampleTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExampleTab.storyboard; sourceTree = "<group>"; };
 		35E655F5202C642800ED1FA7 /* ExampleTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTitleViewController.swift; sourceTree = "<group>"; };
 		35E655F7202C643600ED1FA7 /* ExampleTitle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExampleTitle.storyboard; sourceTree = "<group>"; };
+		35E655F9202C78A000ED1FA7 /* QueryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryViewController.swift; sourceTree = "<group>"; };
+		35E655FB202C78AF00ED1FA7 /* Query.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Query.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				356879F12029FED100040ECE /* ExampleTab.storyboard */,
 				35E655F5202C642800ED1FA7 /* ExampleTitleViewController.swift */,
 				35E655F7202C643600ED1FA7 /* ExampleTitle.storyboard */,
+				35E655F9202C78A000ED1FA7 /* QueryViewController.swift */,
+				35E655FB202C78AF00ED1FA7 /* Query.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -172,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				356879D42029EE5E00040ECE /* LaunchScreen.storyboard in Resources */,
+				35E655FC202C78AF00ED1FA7 /* Query.storyboard in Resources */,
 				356879D12029EE5E00040ECE /* Assets.xcassets in Resources */,
 				356879CF2029EE5E00040ECE /* Main.storyboard in Resources */,
 				35E655F8202C643600ED1FA7 /* ExampleTitle.storyboard in Resources */,
@@ -190,6 +197,7 @@
 				356879CC2029EE5E00040ECE /* ViewController.swift in Sources */,
 				356879CA2029EE5E00040ECE /* AppDelegate.swift in Sources */,
 				356879F02029FEAF00040ECE /* ExampleTabViewController.swift in Sources */,
+				35E655FA202C78A000ED1FA7 /* QueryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
