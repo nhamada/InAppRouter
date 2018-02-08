@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         InAppRouter.default.register(endpoint: "/tabs", with: ExampleTabViewController.self)
         InAppRouter.default.register(endpoint: "/titles/{titleId:Int}", with: ExampleTitleViewController.self)
+        InAppRouter.default.register(endpoint: "/query/{query:String}", with: QueryViewController.self)
         
         return true
     }

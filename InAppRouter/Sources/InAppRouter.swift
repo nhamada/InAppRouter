@@ -30,7 +30,10 @@ public final class InAppRouter {
     
     @discardableResult
     public func route(to urlString: String) -> Bool {
-        guard let url = URL(string: urlString) else {
+        guard let encodedUrlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            return false
+        }
+        guard let url = URL(string: encodedUrlString) else {
             return false
         }
         return route(to: url)

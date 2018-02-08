@@ -43,6 +43,24 @@ extension URLComponents {
                 result[name] = type.instantiate($0)
             }
         }
+        queryItems?.forEach {
+            guard let value = $0.value else {
+                return
+            }
+            result[$0.name] = value.asQueryValue
+        }
         return result
+    }
+}
+
+fileprivate extension String {
+    var asQueryValue: Any {
+        if let value = Int(self) {
+            return value
+        }
+        if let value = Double(self) {
+            return value
+        }
+        return self
     }
 }
