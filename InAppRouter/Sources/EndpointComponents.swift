@@ -13,6 +13,17 @@ enum ParameterType {
     case double
     case string
     
+    var name: String {
+        switch self {
+        case .integer:
+            return "Int"
+        case .double:
+            return "Double"
+        case .string:
+            return "String"
+        }
+    }
+    
     init(_ string: String) {
         switch string {
         case "Int":
@@ -65,6 +76,15 @@ enum Component {
     case label(name: String)
     case parameter(name: String, type: ParameterType)
     
+    var path: String {
+        switch self {
+        case .label(let name):
+            return name
+        case .parameter(let name, let type):
+            return "{\(name):\(type.name)}"
+        }
+    }
+    
     init(from string: Substring) {
         if string.hasPrefix("{") && string.hasSuffix("}") && string.contains(":") {
             let unwrapped = string.dropFirst().dropLast().split(separator: ":")
@@ -92,6 +112,10 @@ struct EndpointComponents {
     static let separatorString = String(EndpointComponents.separator)
     
     let components: [Component]
+    
+    var path: String {
+        return EndpointComponents.separatorString + components.map( { $0.path } ).joined(separator: EndpointComponents.separatorString)
+    }
     
     init(_ string: String) {
         if !string.hasPrefix(EndpointComponents.separatorString) {
