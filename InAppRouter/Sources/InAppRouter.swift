@@ -29,7 +29,7 @@ public final class InAppRouter {
     }
     
     @discardableResult
-    public func route(to urlString: String) -> Bool {
+    public func route(to urlString: String, strategy: PresentationStrategy = .default) -> Bool {
         guard let encodedUrlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             return false
         }
@@ -40,24 +40,17 @@ public final class InAppRouter {
     }
     
     @discardableResult
-    public func route(to url: URL) -> Bool {
+    public func route(to url: URL, strategy: PresentationStrategy = .default) -> Bool {
         guard let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
             return false
         }
         guard let destination = endpoints.first(where: { urlComponents.match(to: $0) }) else {
             return false
         }
-        
-        guard let rootViewController = UIApplication.shared.keyWindow?.rootViewController else {
-            return false
-        }
         let viewController = destination.instantiateViewController(bundle: Bundle.main)
         let parameters = urlComponents.retrieveParameters(for: destination.endpointComponents)
         viewController.setValuesForKeys(parameters)
-        // TODO: Control `present` or `push`
-        rootViewController.present(viewController, animated: true, completion: nil)
-        
-        return true
+        return strategy.process(viewController: viewController)
     }
     
     // MARK: - Private methods
