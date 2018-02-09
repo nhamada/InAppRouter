@@ -19,7 +19,6 @@ final class InAppEndpoint {
     
     init(endpoint: String, viewControllerClass: RoutableViewController.Type) {
         self.endpointComponents = EndpointComponents(endpoint)
-        print(endpointComponents)
         self.viewControllerClass = viewControllerClass
     }
     
