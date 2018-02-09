@@ -28,6 +28,13 @@ public final class InAppRouter {
         endpoints.append(endpoint)
     }
     
+    public func unregister(endpoint: String) {
+        guard let index = endpoints.index(where: { $0.endpointComponents.path == endpoint }) else {
+            return
+        }
+        endpoints.remove(at: index)
+    }
+    
     @discardableResult
     public func route(to urlString: String, strategy: PresentationStrategy = .default) -> Bool {
         guard let encodedUrlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
