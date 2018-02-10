@@ -60,5 +60,22 @@ public final class InAppRouter {
         return strategy.process(viewController: viewController)
     }
     
+    // MARK: - Internal methods
+    
+    @discardableResult
+    internal func register(endpoint: String, with viewControllerClassName: String) -> Bool {
+        guard let namespace = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String else {
+            return false
+        }
+        guard let viewControllerClass = Bundle.main.classNamed("\(namespace).\(viewControllerClassName)") else {
+            return false
+        }
+        guard let routableClass = viewControllerClass as? RoutableViewController.Type else {
+            return false
+        }
+        register(endpoint: endpoint, with: routableClass)
+        return true
+    }
+    
     // MARK: - Private methods
 }
