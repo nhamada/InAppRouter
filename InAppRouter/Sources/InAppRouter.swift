@@ -11,15 +11,18 @@ import Foundation
 public final class InAppRouter {
     // MARK: - Public static properties
     
-    public static let `default`: InAppRouter = InAppRouter()
+    public static let `default`: InAppRouter = InAppRouter(label: "default")
     
     // MARK: - Private properties
     
+    private let label: String
     private var endpoints: [InAppEndpoint] = []
     
     // MARK: - Initializers
     
-    public init() { }
+    public init(label: String) {
+        self.label = label
+    }
     
     // MARK: - Public methods
     
