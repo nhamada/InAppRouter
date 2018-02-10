@@ -15,6 +15,20 @@ public final class InAppRouter {
     
     public static let `default`: InAppRouter = InAppRouter(label: "default")
     
+    public static var supportedSchemes: [String] {
+        guard let urlTypes = Bundle.main.infoDictionary?["CFBundleURLTypes"] as? [[String:Any]] else {
+            return []
+        }
+        var schemes: [String] = []
+        urlTypes.forEach { urlType in
+            guard let urlSchemes = urlType["CFBundleURLSchemes"] as? [String] else {
+                return
+            }
+            schemes.append(contentsOf: urlSchemes)
+        }
+        return schemes
+    }
+    
     // MARK: - Private properties
     
     private let label: String
@@ -83,6 +97,14 @@ public final class InAppRouter {
     @discardableResult
     public func route(to url: URL, strategy: PresentationStrategy = .default) -> Bool {
         guard let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
+            return false
+        }
+        if urlComponents.isHyperText {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            return false
+        }
+        if !urlComponents.isInAppScheme {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
             return false
         }
         guard let destination = endpoints.first(where: { urlComponents.match(to: $0) }) else {

@@ -1,13 +1,12 @@
 //
 //  AppDelegate.swift
-//  Example
+//  OpenExample
 //
-//  Created by Naohiro Hamada on 2018/02/06.
+//  Created by Naohiro Hamada on 2018/02/10.
 //  Copyright © 2018年 Naohiro Hamada. All rights reserved.
 //
 
 import UIKit
-import InAppRouter
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,9 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        InAppRouter.load()
-        
         return true
     }
 
@@ -45,15 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        guard let scheme = url.scheme else {
-            return false
-        }
-        if InAppRouter.supportedSchemes.contains(scheme) {
-            InAppRouter.default.route(to: url)
-            return true
-        }
-        return false
-    }
+
 }
 
