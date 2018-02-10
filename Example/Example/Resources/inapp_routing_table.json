@@ -1,0 +1,17 @@
+{
+    "label": "default",
+    "endpoints": [
+        {
+            "endpoint": "/tabs",
+            "view_controller_class_name": "ExampleTabViewController"
+        },
+        {
+            "endpoint": "/titles/{titleId:Int}",
+            "view_controller_class_name": "ExampleTitleViewController"
+        },
+        {
+            "endpoint": "/query/{query:String}",
+            "view_controller_class_name": "QueryViewController"
+        }
+    ]
+}

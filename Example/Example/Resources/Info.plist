@@ -41,5 +41,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>IARBundleRoutingTable</key>
+	<string>inapp_routing_table.json</string>
 </dict>
 </plist>
