@@ -13,6 +13,7 @@
 		356879EC2029F32500040ECE /* RoutableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356879EB2029F32500040ECE /* RoutableViewController.swift */; };
 		356879EE2029FA1E00040ECE /* URLComponents+Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356879ED2029FA1E00040ECE /* URLComponents+Endpoint.swift */; };
 		35CC27B1202F177B00C8A55A /* InAppRoutingTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CC27B0202F177B00C8A55A /* InAppRoutingTable.swift */; };
+		35CC27B5202F2A6D00C8A55A /* URLComponents+Schemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CC27B4202F2A6D00C8A55A /* URLComponents+Schemes.swift */; };
 		35E655F4202B328C00ED1FA7 /* EndpointComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E655F3202B328C00ED1FA7 /* EndpointComponents.swift */; };
 		35E655FE202C7FC400ED1FA7 /* PresentationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E655FD202C7FC400ED1FA7 /* PresentationStrategy.swift */; };
 		35E65600202DA36100ED1FA7 /* ViewController+Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E655FF202DA36100ED1FA7 /* ViewController+Present.swift */; };
@@ -27,6 +28,7 @@
 		356879EB2029F32500040ECE /* RoutableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutableViewController.swift; sourceTree = "<group>"; };
 		356879ED2029FA1E00040ECE /* URLComponents+Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+Endpoint.swift"; sourceTree = "<group>"; };
 		35CC27B0202F177B00C8A55A /* InAppRoutingTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppRoutingTable.swift; sourceTree = "<group>"; };
+		35CC27B4202F2A6D00C8A55A /* URLComponents+Schemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+Schemes.swift"; sourceTree = "<group>"; };
 		35E655F3202B328C00ED1FA7 /* EndpointComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointComponents.swift; sourceTree = "<group>"; };
 		35E655FD202C7FC400ED1FA7 /* PresentationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationStrategy.swift; sourceTree = "<group>"; };
 		35E655FF202DA36100ED1FA7 /* ViewController+Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Present.swift"; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				35E655FD202C7FC400ED1FA7 /* PresentationStrategy.swift */,
 				35E655FF202DA36100ED1FA7 /* ViewController+Present.swift */,
 				35CC27B0202F177B00C8A55A /* InAppRoutingTable.swift */,
+				35CC27B4202F2A6D00C8A55A /* URLComponents+Schemes.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				35CC27B1202F177B00C8A55A /* InAppRoutingTable.swift in Sources */,
 				35E655FE202C7FC400ED1FA7 /* PresentationStrategy.swift in Sources */,
 				356879EC2029F32500040ECE /* RoutableViewController.swift in Sources */,
+				35CC27B5202F2A6D00C8A55A /* URLComponents+Schemes.swift in Sources */,
 				356879EA2029F2E500040ECE /* InAppRouter.swift in Sources */,
 				35E65600202DA36100ED1FA7 /* ViewController+Present.swift in Sources */,
 				35E655F4202B328C00ED1FA7 /* EndpointComponents.swift in Sources */,
