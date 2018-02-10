@@ -15,6 +15,7 @@
 		356879E22029EEA100040ECE /* InAppRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356879E32029EEA100040ECE /* InAppRouter.framework */; };
 		356879F02029FEAF00040ECE /* ExampleTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356879EF2029FEAF00040ECE /* ExampleTabViewController.swift */; };
 		356879F22029FED100040ECE /* ExampleTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356879F12029FED100040ECE /* ExampleTab.storyboard */; };
+		35CC27B3202F1F3F00C8A55A /* inapp_routing_table.json in Resources */ = {isa = PBXBuildFile; fileRef = 35CC27B2202F1F3F00C8A55A /* inapp_routing_table.json */; };
 		35E655F6202C642800ED1FA7 /* ExampleTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E655F5202C642800ED1FA7 /* ExampleTitleViewController.swift */; };
 		35E655F8202C643600ED1FA7 /* ExampleTitle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E655F7202C643600ED1FA7 /* ExampleTitle.storyboard */; };
 		35E655FA202C78A000ED1FA7 /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E655F9202C78A000ED1FA7 /* QueryViewController.swift */; };
@@ -32,6 +33,7 @@
 		356879E32029EEA100040ECE /* InAppRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = InAppRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		356879EF2029FEAF00040ECE /* ExampleTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTabViewController.swift; sourceTree = "<group>"; };
 		356879F12029FED100040ECE /* ExampleTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExampleTab.storyboard; sourceTree = "<group>"; };
+		35CC27B2202F1F3F00C8A55A /* inapp_routing_table.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = inapp_routing_table.json; sourceTree = "<group>"; };
 		35E655F5202C642800ED1FA7 /* ExampleTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTitleViewController.swift; sourceTree = "<group>"; };
 		35E655F7202C643600ED1FA7 /* ExampleTitle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExampleTitle.storyboard; sourceTree = "<group>"; };
 		35E655F9202C78A000ED1FA7 /* QueryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				356879D02029EE5E00040ECE /* Assets.xcassets */,
 				356879D22029EE5E00040ECE /* LaunchScreen.storyboard */,
 				356879D52029EE5F00040ECE /* Info.plist */,
+				35CC27B2202F1F3F00C8A55A /* inapp_routing_table.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				356879D12029EE5E00040ECE /* Assets.xcassets in Resources */,
 				356879CF2029EE5E00040ECE /* Main.storyboard in Resources */,
 				35E655F8202C643600ED1FA7 /* ExampleTitle.storyboard in Resources */,
+				35CC27B3202F1F3F00C8A55A /* inapp_routing_table.json in Resources */,
 				356879F22029FED100040ECE /* ExampleTab.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

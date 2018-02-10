@@ -18,9 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        InAppRouter.default.register(endpoint: "/tabs", with: ExampleTabViewController.self)
-        InAppRouter.default.register(endpoint: "/titles/{titleId:Int}", with: ExampleTitleViewController.self)
-        InAppRouter.default.register(endpoint: "/query/{query:String}", with: QueryViewController.self)
+        InAppRouter.load()
         
         return true
     }

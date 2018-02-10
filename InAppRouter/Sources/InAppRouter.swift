@@ -8,18 +8,52 @@
 
 import Foundation
 
+public let IARBundleRoutingTableKey = "IARBundleRoutingTable"
+
 public final class InAppRouter {
     // MARK: - Public static properties
     
-    public static let `default`: InAppRouter = InAppRouter()
+    public static let `default`: InAppRouter = InAppRouter(label: "default")
     
     // MARK: - Private properties
     
+    private let label: String
     private var endpoints: [InAppEndpoint] = []
     
     // MARK: - Initializers
     
-    public init() { }
+    public init(label: String) {
+        self.label = label
+    }
+    
+    // MARK: - Public static methods
+    
+    public static func load() -> InAppRouter {
+        guard let bundleUrl = Bundle.main.resourceURL else {
+            fatalError()
+        }
+        guard let routingTableJsonFile = Bundle.main.infoDictionary?[IARBundleRoutingTableKey] as? String else {
+            fatalError()
+        }
+        let routingTableJsonUrl = bundleUrl.appendingPathComponent(routingTableJsonFile)
+        return load(from: routingTableJsonUrl.path)
+    }
+    
+    public static func load(from path: String) -> InAppRouter {
+        let url = URL(fileURLWithPath: path)
+        guard let jsonData = try? Data(contentsOf: url) else {
+            fatalError()
+        }
+        let jsonDecoder = JSONDecoder()
+        guard let routingTable = try? jsonDecoder.decode(InAppRoutingTable.self, from: jsonData) else {
+            fatalError()
+        }
+        let router = routingTable.instantiateRouter()
+        routingTable.endpoints.forEach {
+            router.register(endpoint: $0.endpoint, with: $0.viewControllerClassName)
+        }
+        return router
+    }
     
     // MARK: - Public methods
     
@@ -78,4 +112,16 @@ public final class InAppRouter {
     }
     
     // MARK: - Private methods
+}
+
+fileprivate extension InAppRoutingTable {
+    func instantiateRouter() -> InAppRouter {
+        guard let label = label else {
+            return InAppRouter.default
+        }
+        if label == "default" {
+            return InAppRouter.default
+        }
+        return InAppRouter(label: label)
+    }
 }
