@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="X7Y-RJ-Lm1">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="229.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destinations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcl-z3-3cO">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
@@ -70,6 +70,26 @@
                                                     <action selector="onButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HMU-ao-Yol"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Web sites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duT-i5-yny">
+                                                <rect key="frame" x="0.0" y="237.5" width="375" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zci-bS-7Uh">
+                                                <rect key="frame" x="0.0" y="266" width="375" height="30"/>
+                                                <state key="normal" title="Google"/>
+                                                <connections>
+                                                    <action selector="onButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xEC-hm-P96"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3S-GO-bCx">
+                                                <rect key="frame" x="0.0" y="304" width="375" height="30"/>
+                                                <state key="normal" title="Yahoo.co.jp"/>
+                                                <connections>
+                                                    <action selector="onButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hKS-rK-lwq"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -93,6 +113,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Lrw-mC-D3A"/>
                     <connections>
+                        <outlet property="openGoogleButton" destination="zci-bS-7Uh" id="d8L-pa-Na1"/>
+                        <outlet property="openYahooButton" destination="c3S-GO-bCx" id="dp7-Wl-YNT"/>
                         <outlet property="queryWithOptionButton" destination="abW-XL-bhu" id="0SS-g5-gHp"/>
                         <outlet property="queryWithoutOptionButton" destination="7x9-DX-3h4" id="MRz-TC-FjU"/>
                         <outlet property="tabsButton" destination="wYs-cF-hoT" id="Pyk-1V-utZ"/>

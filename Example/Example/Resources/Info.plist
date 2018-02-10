@@ -43,5 +43,16 @@
 	</array>
 	<key>IARBundleRoutingTable</key>
 	<string>inapp_routing_table.json</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>InAppRouter example schemes</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>iar-example</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
