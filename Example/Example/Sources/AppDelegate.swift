@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return false
         }
         if InAppRouter.supportedSchemes.contains(scheme) {
-            InAppRouter.default.route(to: url)
+            InAppRouter.default.open(url: url)
             return true
         }
         return false

@@ -64,19 +64,19 @@ public final class InAppRouter {
         }
         let router = routingTable.instantiateRouter()
         routingTable.endpoints.forEach {
-            router.register(endpoint: $0.endpoint, with: $0.viewControllerClassName)
+            router.route(to: $0.endpoint, with: $0.viewControllerClassName)
         }
         return router
     }
     
     // MARK: - Public methods
     
-    public func register(endpoint: String, with viewControllerClass: RoutableViewController.Type) {
+    public func route(to endpoint: String, with viewControllerClass: RoutableViewController.Type) {
         let endpoint = InAppEndpoint(endpoint: endpoint, viewControllerClass: viewControllerClass)
         endpoints.append(endpoint)
     }
     
-    public func unregister(endpoint: String) {
+    public func remove(endpoint: String) {
         guard let index = endpoints.index(where: { $0.endpointComponents.path == endpoint }) else {
             return
         }
@@ -84,18 +84,18 @@ public final class InAppRouter {
     }
     
     @discardableResult
-    public func route(to urlString: String, strategy: PresentationStrategy = .default) -> Bool {
-        guard let encodedUrlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+    public func open(path: String, strategy: PresentationStrategy = .default) -> Bool {
+        guard let encodedUrlString = path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             return false
         }
         guard let url = URL(string: encodedUrlString) else {
             return false
         }
-        return route(to: url)
+        return open(url: url)
     }
     
     @discardableResult
-    public func route(to url: URL, strategy: PresentationStrategy = .default) -> Bool {
+    public func open(url: URL, strategy: PresentationStrategy = .default) -> Bool {
         guard let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
             return false
         }
@@ -119,7 +119,7 @@ public final class InAppRouter {
     // MARK: - Internal methods
     
     @discardableResult
-    internal func register(endpoint: String, with viewControllerClassName: String) -> Bool {
+    internal func route(to endpoint: String, with viewControllerClassName: String) -> Bool {
         guard let namespace = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String else {
             return false
         }
@@ -129,7 +129,7 @@ public final class InAppRouter {
         guard let routableClass = viewControllerClass as? RoutableViewController.Type else {
             return false
         }
-        register(endpoint: endpoint, with: routableClass)
+        route(to: endpoint, with: routableClass)
         return true
     }
     
