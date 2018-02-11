@@ -31,17 +31,17 @@ class ViewController: UIViewController {
     @IBAction func onButtonTapped(_ sender: UIButton) {
         switch sender {
         case tabsButton:
-            InAppRouter.default.route(to: "/tabs")
+            InAppRouter.default.open(path: "/tabs")
         case titleId10Button:
-            InAppRouter.default.route(to: "/titles/10")
+            InAppRouter.default.open(path: "/titles/10")
         case queryWithoutOptionButton:
-            InAppRouter.default.route(to: "/query/NoOption")
+            InAppRouter.default.open(path: "/query/NoOption")
         case queryWithOptionButton:
-            InAppRouter.default.route(to: "/query/option?optionalQuery=\"Test data\"&optionalValue=42")
+            InAppRouter.default.open(path: "/query/option?optionalQuery=\"Test data\"&optionalValue=42")
         case openGoogleButton:
-            InAppRouter.default.route(to: "http://www.google.com/")
+            InAppRouter.default.open(path: "http://www.google.com/")
         case openYahooButton:
-            InAppRouter.default.route(to: "http://www.yahoo.co.jp/")
+            InAppRouter.default.open(path: "http://www.yahoo.co.jp/")
         default:
             break
         }
