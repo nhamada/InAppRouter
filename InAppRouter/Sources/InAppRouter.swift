@@ -8,13 +8,30 @@
 
 import Foundation
 
+/**
+ * Key name of `Info.plist` (`IARBundleRoutingTable`).
+ * Corresponding value represents a file name of a routing table for App.
+ */
 public let IARBundleRoutingTableKey = "IARBundleRoutingTable"
 
+/**
+ * Router which routes a URL to specific view controller or open URL in a default browser.
+ */
 public final class InAppRouter {
     // MARK: - Public static properties
     
+    /**
+     * Default router.
+     *
+     * If you need a specific router, instantiate other `InAppRouter` instance.
+     */
     public static let `default`: InAppRouter = InAppRouter(label: "default")
     
+    /**
+     * Supported URL schemes in a router.
+     *
+     * URL schemes are defined in `Info.plist` with `CFBundleURLTypes`.
+     */
     public static var supportedSchemes: [String] {
         guard let urlTypes = Bundle.main.infoDictionary?["CFBundleURLTypes"] as? [[String:Any]] else {
             return []
@@ -31,17 +48,29 @@ public final class InAppRouter {
     
     // MARK: - Private properties
     
+    /// Router's label which is used to identify a router.
     private let label: String
+    /// Routable  endpoints
     private var endpoints: [InAppEndpoint] = []
     
     // MARK: - Initializers
     
+    /**
+     * Initialize a router with label.
+     *
+     * - parameters:
+     *   - label: Label to identify a router.
+     */
     public init(label: String) {
         self.label = label
     }
     
     // MARK: - Public static methods
     
+    /**
+     * Load a routing endpoints from a resource.
+     * A routing endpoints are defined in a file which are given by `Info.plist` with key `IARBundleRoutingTableKey`.
+     */
     public static func load() -> InAppRouter {
         guard let bundleUrl = Bundle.main.resourceURL else {
             fatalError()
@@ -53,6 +82,12 @@ public final class InAppRouter {
         return load(from: routingTableJsonUrl.path)
     }
     
+    /**
+     * Load a routing endpoints from a given JSON file.
+     *
+     * - parameters:
+     *   - path: A JSON file path.
+     */
     public static func load(from path: String) -> InAppRouter {
         let url = URL(fileURLWithPath: path)
         guard let jsonData = try? Data(contentsOf: url) else {
@@ -71,11 +106,27 @@ public final class InAppRouter {
     
     // MARK: - Public methods
     
+    /**
+     * Define an endpoint.
+     *
+     * - parameters:
+     *   - endpoint: Endpoint string.
+     *   - viewControllerClass: View controller class which is opened by router.
+     *                          If router open a URL corresponding to a given endpoint,
+     *                          router opens an instance of a given view controller class.
+     */
     public func route(to endpoint: String, with viewControllerClass: RoutableViewController.Type) {
         let endpoint = InAppEndpoint(endpoint: endpoint, viewControllerClass: viewControllerClass)
         endpoints.append(endpoint)
     }
     
+    /**
+     * Remove a endpoint from a router.
+     *
+     * - parameters:
+     *   - endpoint: Endpoint to remove from a router.
+     *               If a given endpoint is not added to a router, this method does nothing.
+     */
     public func remove(endpoint: String) {
         guard let index = endpoints.index(where: { $0.endpointComponents.path == endpoint }) else {
             return
@@ -83,6 +134,19 @@ public final class InAppRouter {
         endpoints.remove(at: index)
     }
     
+    /**
+     * Open a URL.
+     *
+     * - parameters:
+     *   - path: A string representation of URL to open.
+     *           `path` must be a valid presentation.
+     *   - strategy: URL opening strategy.
+     *               If `strategy` is unspecified, a router uses a default strategy.
+     *               The default strategy is as followings:
+     *               If the router finds a navigation controller, the router pushes a view controller.
+     *               Otherwise, the router presents a view controller.
+     * - returns: If a router open a view controller in the App, this method returns `true`. Otherwise, this method returns `false`.
+     */
     @discardableResult
     public func open(path: String, strategy: PresentationStrategy = .default) -> Bool {
         guard let encodedUrlString = path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
@@ -94,6 +158,19 @@ public final class InAppRouter {
         return open(url: url)
     }
     
+    /**
+     * Open a URL.
+     *
+     * - parameters:
+     *   - url: A URL to open.
+     *   - strategy: URL opening strategy.
+     *               If `strategy` is unspecified, a router uses a default strategy.
+     *               The default strategy is as followings:
+     *               If the router finds a navigation controller, the router pushes a view controller.
+     *               Otherwise, the router presents a view controller.
+     * - returns: If a router open a view controller in the App, this method returns `true`. Otherwise, this method returns `false`.
+     */
+
     @discardableResult
     public func open(url: URL, strategy: PresentationStrategy = .default) -> Bool {
         guard let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
