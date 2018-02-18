@@ -22,7 +22,7 @@ If view controler has `WKWebView`, the view controller must conform `WebRoutable
 
 ### `RoutableViewController`
 View controller must conform to `RoutableViewController` protocol.
-In `RoutableViewController`, you must implement 2 properties.
+In `RoutableViewController`, you must implement 2 static properties.
 
 | Property | Type | Description |
 |:---------|:-----|:------------|
@@ -43,7 +43,7 @@ class TitleViewController: UIViewController, RoutableViewController {
 }
 ```
 
-### View controller with `WebView`
+### `WebRoutableViewController`
 If your view controller contains `WebView`, the view controller must conform `WebRoutableViewController` protocol.
 `WebRoutableViewController` is inherited from `RoutableViewController`.
 In `WebRoutableViewController`, you must define 1 property.
