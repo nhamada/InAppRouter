@@ -1,6 +1,11 @@
 # InAppRouter
 iOS Framework for screen transitions as URL routings.
 
+- [Summary](#summary)
+- [How to use](how-to-use)
+- [Installation](#installation)
+- [License](#license)
+
 # Summary
 1. Define URL routings and corresponding view controllers.
 2. Open URL, and then a corresponding view controller is presented.
@@ -139,5 +144,5 @@ github "nhamada/InAppRouter"
 1. Clone this repository.
 2. Add `InAppRouter.xcodeproj` to your project.
 
-## License
+# License
 This package is released under the MIT License, see [LICENSE](LICENSE).
