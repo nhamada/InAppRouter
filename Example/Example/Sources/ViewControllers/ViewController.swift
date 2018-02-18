@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         case queryWithOptionButton:
             InAppRouter.default.open(path: "/query/option?optionalQuery=\"Test data\"&optionalValue=42")
         case openGoogleButton:
-            InAppRouter.default.open(path: "http://www.google.com/")
+            InAppRouter.default.open(path: "https://www.google.com/")
         case openYahooButton:
             InAppRouter.default.open(path: "http://www.yahoo.co.jp/")
         default:
