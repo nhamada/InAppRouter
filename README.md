@@ -2,7 +2,7 @@
 iOS Framework for screen transitions as URL routings.
 
 - [Summary](#summary)
-- [How to use](how-to-use)
+- [How to use](#how-to-use)
 - [Installation](#installation)
 - [License](#license)
 
