@@ -12,12 +12,16 @@ import UIKit
  * In App routing endpoint definition.
  */
 final class InAppEndpoint {
+    /// Endpoint scheme
+    internal let scheme: String?
     /// Endpoint definition
     internal let endpointComponents: EndpointComponents
     /// Corresponding view controller class
     private let viewControllerClass: RoutableViewController.Type
     
     init(endpoint: String, viewControllerClass: RoutableViewController.Type) {
+        let urlComponents = URLComponents(string: endpoint)
+        self.scheme = urlComponents?.scheme
         self.endpointComponents = EndpointComponents(endpoint)
         self.viewControllerClass = viewControllerClass
     }

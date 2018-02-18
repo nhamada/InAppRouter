@@ -9,7 +9,7 @@
 import Foundation
 
 extension URLComponents {
-    var isHyperText: Bool {
+    var isHttp: Bool {
         guard let scheme = scheme else {
             return false
         }

@@ -118,6 +118,7 @@ struct EndpointComponents {
     }
     
     init(_ string: String) {
+        let string = removeHttp(from: string)
         if !string.hasPrefix(EndpointComponents.separatorString) {
             components = []
             return
@@ -127,3 +128,12 @@ struct EndpointComponents {
     }
 }
 
+private func removeHttp(from string: String) -> String {
+    if string.hasPrefix("http://") || string.hasPrefix("https://") {
+        guard let index = string.index(of: "/") else {
+            abort()
+        }
+        return String(string.dropFirst(index.encodedOffset + 1))
+    }
+    return string
+}

@@ -176,20 +176,17 @@ public final class InAppRouter {
         guard let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
             return false
         }
-        if urlComponents.isHyperText {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            return false
-        }
-        if !urlComponents.isInAppScheme {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            return false
-        }
         guard let destination = endpoints.first(where: { urlComponents.match(to: $0) }) else {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
             return false
         }
         let viewController = destination.instantiateViewController(bundle: Bundle.main)
-        let parameters = urlComponents.retrieveParameters(for: destination.endpointComponents)
-        viewController.setValuesForKeys(parameters)
+        if urlComponents.isHttp, let webViewController = viewController as? WebRoutableViewController {
+            webViewController.url = url
+        } else {
+            let parameters = urlComponents.retrieveParameters(for: destination.endpointComponents)
+            viewController.setValuesForKeys(parameters)
+        }
         return strategy.process(viewController: viewController)
     }
     

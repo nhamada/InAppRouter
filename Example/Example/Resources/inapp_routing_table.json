@@ -12,6 +12,10 @@
         {
             "endpoint": "/query/{query:String}",
             "view_controller_class_name": "QueryViewController"
+        },
+        {
+            "endpoint": "https://www.google.com/",
+            "view_controller_class_name": "InAppWebViewController"
         }
     ]
 }

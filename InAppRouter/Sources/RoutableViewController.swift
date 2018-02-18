@@ -17,3 +17,7 @@ public protocol RoutableViewController: class where Self: UIViewController {
     /// Storyboard ID
     static var storyboardIdentifier: String { get }
 }
+
+public protocol WebRoutableViewController: RoutableViewController {
+    var url: URL? { get set }
+}

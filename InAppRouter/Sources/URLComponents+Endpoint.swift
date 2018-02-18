@@ -9,7 +9,7 @@
 import Foundation
 
 extension URLComponents {
-    private var routablePath: String {
+    var routablePath: String {
         if let host = host {
             return "\(host)\(EndpointComponents.separator)\(path)"
         } else {
@@ -22,6 +22,12 @@ extension URLComponents {
     }
     
     func match(to endpoint: InAppEndpoint) -> Bool {
+        if let scheme = scheme, let endpointScheme = endpoint.scheme, scheme != endpointScheme {
+            return false
+        }
+        if !isHttp && !isInAppScheme {
+            return false
+        }
         guard routablePathComponents.count == endpoint.endpointComponents.components.count else {
             return false
         }

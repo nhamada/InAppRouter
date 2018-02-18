@@ -1,19 +1,33 @@
 # InAppRouter
 iOS Framework for screen transitions as URL routings.
 
+- [Summary](#summary)
+- [How to use](#how-to-use)
+- [Installation](#installation)
+- [License](#license)
+
 # Summary
 1. Define URL routings and corresponding view controllers.
 2. Open URL, and then a corresponding view controller is presented.
 
 # How to use
 ## View controller implementation
-View controller must conform to `RoutableViewController` protocol.
-In `RoutableViewController`, you must implement 2 properties.
+Your view controller must conform a one of the following protocols:
 
-| Property | Description |
-|:---------|:------------|
-| `storyboardName` | Name of storyboard file. (file name without extension) |
-| `storyboardIdentifier` | Storyboard ID which is used in storyboard. |
+- `RoutableViewController`
+- `WebRoutableViewController`
+
+If view controler does not have `WKWebView`, the view controller must conform `RoutableViewController`.
+If view controler has `WKWebView`, the view controller must conform `WebRoutableViewController`.
+
+### `RoutableViewController`
+View controller must conform to `RoutableViewController` protocol.
+In `RoutableViewController`, you must implement 2 static properties.
+
+| Property | Type | Description |
+|:---------|:-----|:------------|
+| `storyboardName` | `String` | Name of storyboard file. (file name without extension) |
+| `storyboardIdentifier` | `String` | Storyboard ID which is used in storyboard. |
 
 If you want to get parameters in URL, view controller has properties whose name corresponds to parameter name.
 For example, if the view controller get `titleId` from a URL, the view controller must have a property whose name is `titleId`.
@@ -28,6 +42,17 @@ class TitleViewController: UIViewController, RoutableViewController {
     @objc var titleId: Int = -1
 }
 ```
+
+### `WebRoutableViewController`
+If your view controller contains `WebView`, the view controller must conform `WebRoutableViewController` protocol.
+`WebRoutableViewController` is inherited from `RoutableViewController`.
+In `WebRoutableViewController`, you must define 1 property.
+
+| Property | Type | Description |
+|:---------|:-----|:------------|
+| `url` | `URL?` | A URL which is opened within view controller. |
+
+`InAppRouter` assigns `url` to view controllers's `url` when opening `InAppRouter` opens a URL.
 
 ## URL routings
 URL is define as followings:
@@ -139,5 +164,5 @@ github "nhamada/InAppRouter"
 1. Clone this repository.
 2. Add `InAppRouter.xcodeproj` to your project.
 
-## License
+# License
 This package is released under the MIT License, see [LICENSE](LICENSE).
