@@ -181,8 +181,12 @@ public final class InAppRouter {
             return false
         }
         let viewController = destination.instantiateViewController(bundle: Bundle.main)
-        let parameters = urlComponents.retrieveParameters(for: destination.endpointComponents)
-        viewController.setValuesForKeys(parameters)
+        if urlComponents.isHttp, let webViewController = viewController as? WebRoutableViewController {
+            webViewController.url = url
+        } else {
+            let parameters = urlComponents.retrieveParameters(for: destination.endpointComponents)
+            viewController.setValuesForKeys(parameters)
+        }
         return strategy.process(viewController: viewController)
     }
     
