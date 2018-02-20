@@ -33,7 +33,7 @@ enum ParameterType {
         case "String":
             self = .string
         default:
-            fatalError()
+            fatalError("'\(string)' is not supported.")
         }
     }
     
@@ -58,12 +58,12 @@ enum ParameterType {
         switch self {
         case .integer:
             guard let value = Int(string) else {
-                fatalError()
+                fatalError("\(string) is not 'Int'. (Endpoint is defined with 'Int')")
             }
             return value
         case .double:
             guard let value = Double(string) else {
-                fatalError()
+                fatalError("\(string) is not 'Double'. (Endpoint is defined with 'Double')")
             }
             return value
         case .string:
@@ -89,7 +89,7 @@ enum Component {
         if string.hasPrefix("{") && string.hasSuffix("}") && string.contains(":") {
             let unwrapped = string.dropFirst().dropLast().split(separator: ":")
             guard unwrapped.count == 2 else {
-                fatalError("")
+                fatalError("\(string) is invalid format. Acceptable format is: {`name`:`type`}")
             }
             self = .parameter(name: String(unwrapped[0]), type: ParameterType(String(unwrapped[1])))
         } else {
