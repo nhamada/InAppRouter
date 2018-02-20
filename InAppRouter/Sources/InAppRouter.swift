@@ -73,10 +73,10 @@ public final class InAppRouter {
      */
     public static func load() -> InAppRouter {
         guard let bundleUrl = Bundle.main.resourceURL else {
-            fatalError()
+            fatalError("There is no resource bundle for App.")
         }
         guard let routingTableJsonFile = Bundle.main.infoDictionary?[IARBundleRoutingTableKey] as? String else {
-            fatalError()
+            fatalError("Key \(IARBundleRoutingTableKey) is missing.")
         }
         let routingTableJsonUrl = bundleUrl.appendingPathComponent(routingTableJsonFile)
         return load(from: routingTableJsonUrl.path)
@@ -91,11 +91,11 @@ public final class InAppRouter {
     public static func load(from path: String) -> InAppRouter {
         let url = URL(fileURLWithPath: path)
         guard let jsonData = try? Data(contentsOf: url) else {
-            fatalError()
+            fatalError("Failed to load data from: \(path)")
         }
         let jsonDecoder = JSONDecoder()
         guard let routingTable = try? jsonDecoder.decode(InAppRoutingTable.self, from: jsonData) else {
-            fatalError()
+            fatalError("'\(path)' is invalid. Please recheck your file.")
         }
         let router = routingTable.instantiateRouter()
         routingTable.endpoints.forEach {
